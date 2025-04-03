@@ -64,16 +64,21 @@
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
 
+      try {
       const response = await fetch("https://script.google.com/macros/s/AKfycbyRWR3HwDdumNmLaxAIePU6v_4VnUOTMcBslpW_ufOZ/dev", {
         method: "POST",
         body: JSON.stringify(data),
         headers: { "Content-Type": "application/json" }
       });
 
-      const result = await response.text();
-      mensagem.textContent = result;
-      form.reset();
-    });
+  const result = await response.text();
+    mensagem.textContent = result;
+    form.reset();
+  } catch (error) {
+    mensagem.textContent = "Erro ao enviar os dados. Tente novamente.";
+    console.error("Erro:", error);
+  }
+});
   </script>
 </body>
 </html>
