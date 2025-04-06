@@ -2,7 +2,6 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inscrição Corrida Running</title>
   <style>
     body {
@@ -22,7 +21,7 @@
 </head>
 <body>
   <h1>Inscrição Corrida Running</h1>
-  
+
   <form id="cadastroForm">
     <label>Nome:</label>
     <input type="text" name="nome" required>
@@ -58,19 +57,18 @@
   <p id="mensagem"></p>
 
   <script>
-    const form = document.getElementById('cadastroForm');
-    const mensagem = document.getElementById('mensagem');
+    const form = document.getElementById("cadastroForm");
+    const mensagem = document.getElementById("mensagem");
 
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-
+      
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
 
       try {
-        const response = await fetch("https://script.google.com/macros/s/AKfycbz_3iuDbrERvGMYn7YDvXL2lYKkxarq7072S9YiDVeaM9zh6u3dy01hIsfqQM07HPgb6A/exec", {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbwO3Gr8vcQFhHlfzsiBUZdXbrib6bLNyHSibnxDzREOy3epRAB5g8t3cWPT5AgBBDXAnw/exec", {
           method: "POST",
-          mode: "cors",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data)
         });
@@ -79,8 +77,8 @@
         mensagem.textContent = result;
         form.reset();
       } catch (error) {
-        mensagem.textContent = "❌ Erro ao enviar os dados. Tente novamente.";
-        console.error("Erro:", error);
+        mensagem.textContent = "❌ Erro ao enviar os dados.";
+        console.error(error);
       }
     });
   </script>
