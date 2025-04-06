@@ -69,7 +69,7 @@
       try {
         const response = await fetch("https://script.google.com/macros/s/AKfycbxcWR-XLQ9XsfAzmJT620GdrZcSXaEgh8MK7_mhShLGm8UMz9TvRZjhQqrjFKZSd1PD/exec", {
           method: "POST",
-          body: new URLSearchParams(data) // Aqui é a chave do sucesso!
+          body: new URLSearchParams(data) 
         });
 
         const result = await response.text();
