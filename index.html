@@ -8,7 +8,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom right, #1e90ff, #87cefa); /* Degradê azul */
+      background: linear-gradient(to bottom right, #1e90ff, #87cefa); /* Fundo degrade azul */
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -23,6 +23,7 @@
       margin-top: 40px;
       max-width: 500px;
       width: 100%;
+      box-sizing: border-box;
     }
 
     header img {
@@ -40,17 +41,25 @@
 
     label, input, select, button {
       margin-top: 10px;
+      font-size: 16px;
     }
 
     h1 {
-      margin-top: 10px;
+      margin-top: 20px;
+      font-size: 22px;
+    }
+
+    #mensagem {
+      margin-top: 20px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <img src="banner.jpg" alt="Banner Corrida CAP Urbano">
+      <!-- 👇 Troque o link abaixo pelo link público do SEU banner -->
+      <img src="https://drive.google.com/file/d/1UdrK4Gl3DBLjm0iuXvWZcebjWkxS51q-/view?usp=sharing" alt="Banner Corrida CAP Urbano">
     </header>
 
     <h1>Inscrição Corrida CAP Urbano</h1>
@@ -117,3 +126,4 @@
   </script>
 </body>
 </html>
+
